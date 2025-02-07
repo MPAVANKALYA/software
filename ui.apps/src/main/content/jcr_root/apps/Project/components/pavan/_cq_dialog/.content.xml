@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="IMAGE"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab1
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="IMAGE MODIFY"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <pathfield
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Path Field"
+                                        name="./path"/>
+                                    <rightEdge
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        fieldLabel="Round Right Edges"
+                                        name="./rightEdge"
+                                        text="Round-bottom-Right Edges"
+                                        value="true"/>
+                                    <leftEdge
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        defaultValue="{Boolean}false"
+                                        fieldLabel="Round Left Edges"
+                                        name="./leftEdge"
+                                        text="Round Left Edges"
+                                        value="true"/>
+                                    <topRightEdge
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        defaultValue="{Boolean}false"
+                                        fieldLabel="Round Top-Right Edge"
+                                        name="./topRightEdge"
+                                        text="Round Top-Right Edge"
+                                        value="true"/>
+                                    <allEdges
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        defaultValue="{Boolean}false"
+                                        fieldLabel="Round All Edges"
+                                        name="./allEdges"
+                                        text="Round All Edges"
+                                        value="true"/>
+                                    <bottom_x0020_leftEdge
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        defaultValue="{Boolean}false"
+                                        fieldLabel="Round bottom Left Edges"
+                                        name="./bottomleftEdge"
+                                        text="Round bottom &#xa;Left Edges"
+                                        value="true"/>
+                                    <radius
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/numberfield"
+                                        allowDecimals="{Boolean}false"
+                                        defaultValue="0"
+                                        fieldLabel="Border Radius (px)"
+                                        maxValue="50"
+                                        minValue="0"
+                                        name="./borderRadius"
+                                        value="10"/>
+                                    <width
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/numberfield"
+                                        allowDecimals="{Boolean}false"
+                                        defaultValue="0"
+                                        fieldLabel="Border width (%)"
+                                        maxValue="100"
+                                        minValue="0"
+                                        name="./bordewidth"
+                                        value="50"/>
+                                    <margin-left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/numberfield"
+                                        allowDecimals="{Boolean}false"
+                                        defaultValue="0"
+                                        fieldLabel="Border margin-left(px)"
+                                        maxValue="1000"
+                                        minValue="0"
+                                        name="./bordermarginleft"
+                                        value="50"/>
+                                </items>
+                            </tab1>
+                        </items>
+                    </tabs>
+                </items>
+            </container>
+        </items>
+    </content>
+</jcr:root>
