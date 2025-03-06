@@ -1,0 +1,8 @@
+.hello2 {
+    background-color: green; /* Default background color */
+    border-radius: 15px; /* Default border-radius */
+    white-space: pre-wrap;
+    padding: 10px;
+    color: white; /* Ensuring text visibility */
+    display: inline-block;
+}

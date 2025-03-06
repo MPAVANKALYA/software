@@ -1,0 +1,25 @@
+<p>task1 </p>
+<div data-sly-use.headerModel="com.Project.core.models.Header">
+
+
+    <h1 class="hello">text field:${headerModel.textfield}</h1>
+    <h1>pathfield:${headerModel.pathfield}</h1>
+    <h1>checkbox:${headerModel.checkbox}</h1>  
+
+
+
+    <div data-sly-list.item="${headerModel.multifield}">
+        <div>
+            <p>Additional Text: ${item.additionaltext}</p>
+            <p>Date: ${item.datepicker}</p>
+        </div>
+    </div>
+
+</div>
+<style>
+     .hello
+     {
+                background-color:red;
+
+     }
+</style>

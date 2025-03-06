@@ -1,0 +1,54 @@
+<p>pavan</p>
+<!-- form.html (HTL) -->
+<form id="dataForm">
+    <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Include the script -->
+<script>
+    // Function to generate a unique ID (CSRF Token)
+    function uniqueID() {
+        function chr4() {
+            return Math.random().toString(16).slice(-4);
+        }
+        return chr4() + chr4() + '-' + chr4() + '-' + chr4() + '-' + chr4() + '-' + chr4() + chr4() + chr4();
+    }
+
+    // Set the CSRF token as a cookie (using JavaScript)
+    document.cookie = "CSRF-TOKEN=" + uniqueID() + "; path=/"; // Set the path to ensure cookie is available for all pages
+
+    // Handle form submission and make AJAX request to the servlet
+    document.getElementById('dataForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Gather the form data
+        const formData = new FormData(document.getElementById('dataForm'));
+        const csrfToken = document.cookie.replace(/(?:(?:^|.*;\s*)CSRF-TOKEN\s*=\s*([^;]*).*$)|^.*$/, "$1");
+
+        // Prepare data for the AJAX request
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            token: csrfToken // Include CSRF token here
+        };
+
+        // Make the AJAX request
+        fetch('/bin/yourServlet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data) // Convert the data object to a JSON string
+        })
+        .then(response => response.json()) // Handle the response as JSON
+        .then(responseData => {
+            console.log('Response Data:', responseData);
+            // You can handle the response here (e.g., show a success message)
+        })
+        .catch(error => {
+            console.error('Error:', error); // Handle any errors that occur during the AJAX call
+        });
+    });
+</script>

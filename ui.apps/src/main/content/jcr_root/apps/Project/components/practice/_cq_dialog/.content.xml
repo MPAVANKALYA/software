@@ -1,0 +1,40 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.day.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Custom Layout Component"
+    xmlns="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <items jcr:primaryType="cq:WidgetCollection">
+        <!-- Layout Selector -->
+        <layout
+            jcr:primaryType="granite/ui/components/coral/foundation/form/select"
+            fieldLabel="Layout"
+            name="./layout">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <single-column
+                    jcr:primaryType="granite/ui/components/coral/foundation/form/option"
+                    text="Single Column"
+                    value="single-column"/>
+                <two-column
+                    jcr:primaryType="granite/ui/components/coral/foundation/form/option"
+                    text="Two Column"
+                    value="two-columns"/>
+            </items>
+        </layout>
+
+        <!-- Column 1 Content -->
+        <column1
+            jcr:primaryType="granite/ui/components/coral/foundation/form/textarea"
+            fieldLabel="Column 1 Content"
+            name="./column1"/>
+
+        <!-- Column 2 Content (only appears if two-column layout is selected) -->
+        <column2
+            jcr:primaryType="granite/ui/components/coral/foundation/form/textarea"
+            fieldLabel="Column 2 Content"
+            name="./column2"
+            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+            cq:visible="{Boolean}false"/>
+    </items>
+</jcr:root>
